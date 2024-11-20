@@ -1,6 +1,5 @@
 from abc import abstractmethod
 
-
 class GENERATOR:
 
     @abstractmethod 
