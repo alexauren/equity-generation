@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from alpha_vantage.timeseries import TimeSeries
 
@@ -15,7 +16,7 @@ class FETCH():
         
     @staticmethod
     def split(data: str) -> None:
-        df = pd.read_csv(f"data/csv/{data}")
+        df = pd.read_csv(f"data/csv/{data}.csv")
         close = df['4. close'].values
         num_series = len(close) // (252 * 5)
         
@@ -25,5 +26,5 @@ class FETCH():
             series = close[start_idx:end_idx]
             pd.Series(series).to_csv(f"data/csv/spy_series/{i+1}.csv")
 
-FETCH().fetch("1MKFCLOIJI3QPW77", "SPY", 'full')
-FETCH().split("SPY.csv")
+# FETCH().fetch("1MKFCLOIJI3QPW77", "SPY", 'full')
+# FETCH().split("SPY.csv")
