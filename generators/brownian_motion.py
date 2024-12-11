@@ -5,7 +5,7 @@ from generators.generator import GENERATOR
 class BROWNIAN_MOTION(GENERATOR):
 
     @staticmethod
-    def generate(mu=0.1, n=252, T=5, M=1, S0=100, sigma=0.3):     
+    def generate(mu=0.1, n=252, T=5, M=1, S0=100, sigma=0.25):     
         """
         Simulates asset prices using the Geometric Brownian Motion model.
 
@@ -37,4 +37,3 @@ class BROWNIAN_MOTION(GENERATOR):
         # Require numpy array that is the same shape as St
         tt = np.full(shape=(M,(n*T)+1), fill_value=time).T
         return (St, tt)
-    

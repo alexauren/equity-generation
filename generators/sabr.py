@@ -4,7 +4,7 @@ import numpy as np
 class SABR(GENERATOR):
 
     @staticmethod
-    def generate(T=5, n=252, alpha=0.3, beta=0.5, rho=-0.3, vol_of_vol=0.2, initial_price=100):
+    def generate(T=5, n=252, alpha=0.2, beta=1, rho=-0.3, vol_of_vol=0.2, initial_price=100):
         """
         Generate a synthetic stock time series using the SABR model.
         

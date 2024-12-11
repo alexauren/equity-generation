@@ -34,7 +34,7 @@ class STYLIZED_FACTS:
         else:
             return False 
         
-    def check_volatility_clustering(self, window_size: int = 20) -> bool: # can be improved
+    def check_volatility_clustering(self) -> bool: # can be improved
         """
         Checks if a stock price time series exhibits volatility clustering.
 
@@ -47,7 +47,6 @@ class STYLIZED_FACTS:
         """
         data = self.data
         log_returns = np.diff(np.log(data))
-        
         # Calculate rolling standard deviation (volatility)
         data2 = log_returns**2
         ljung_box_results = acorr_ljungbox(data2, lags=10, return_df=True)
